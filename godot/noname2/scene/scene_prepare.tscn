@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://dp6ldd0suds0c"]
+
+[ext_resource type="Texture2D" uid="uid://drff0ednen05m" path="res://picture/scene2.png" id="1_bk8cg"]
+[ext_resource type="Script" uid="uid://b6rlrl3pdep1j" path="res://code/node_2d.gd" id="1_ppj8h"]
+[ext_resource type="Script" uid="uid://c2wvopj0gireb" path="res://code/button_prepare.gd" id="3_ppj8h"]
+[ext_resource type="PackedScene" uid="uid://dt2rxlp8db3fe" path="res://scene/card_example.tscn" id="3_uirtc"]
+[ext_resource type="Script" uid="uid://bhgl5yaa6y7db" path="res://code/control2.gd" id="5_osv5h"]
+
+[node name="ScenePrepare" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_ppj8h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("1_bk8cg")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -873.0
+offset_top = -413.0
+offset_right = -49.0
+offset_bottom = -325.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "choose the cards you need"
+
+[node name="CardExample" parent="Node2D" instance=ExtResource("3_uirtc")]
+position = Vector2(388, -185)
+
+[node name="Button" type="Button" parent="Node2D"]
+custom_minimum_size = Vector2(108, 16)
+offset_left = -61.0
+offset_top = 372.0
+offset_right = 50.0
+offset_bottom = 447.0
+theme_override_font_sizes/font_size = 48
+text = "next"
+script = ExtResource("3_ppj8h")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_osv5h")
+
+[connection signal="button_down" from="Node2D/Button" to="Node2D" method="_on_button_button_down"]
+[connection signal="button_down" from="Node2D/Button" to="Node2D/Button" method="_on_button_down"]
+[connection signal="button_down" from="Node2D/Button" to="Control2" method="_on_button_button_down"]

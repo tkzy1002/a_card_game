@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2ba7xurc0ib6"]
+
+[ext_resource type="Texture2D" uid="uid://dfoka4ydshekg" path="res://picture/sence1.png" id="1_x5g8r"]
+[ext_resource type="PackedScene" uid="uid://cnrrdcwrmjxp0" path="res://scene/camera_1.tscn" id="2_t33r7"]
+[ext_resource type="Script" uid="uid://c540rdxdx3ifa" path="res://code/sprite_2d.gd" id="2_xup1i"]
+[ext_resource type="Script" uid="uid://bywcw8tsbad8l" path="res://code/scence_start.gd" id="3_j6b13"]
+[ext_resource type="Script" uid="uid://dqhn78nm5a77q" path="res://code/button_2.gd" id="3_yuprj"]
+[ext_resource type="Script" uid="uid://8amleamxxvom" path="res://code/botton.gd" id="4_xup1i"]
+[ext_resource type="Script" uid="uid://bblhdqroq0op3" path="res://code/button_3.gd" id="4_yuprj"]
+[ext_resource type="PackedScene" uid="uid://cficaxj5y66cy" path="res://scene/control.tscn" id="5_pf2on"]
+
+[node name="SceneStart" type="Node2D"]
+
+[node name="Control" parent="." instance=ExtResource("5_pf2on")]
+
+[node name="Camera1" parent="." instance=ExtResource("2_t33r7")]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("3_j6b13")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node"]
+texture = ExtResource("1_x5g8r")
+script = ExtResource("2_xup1i")
+
+[node name="Button1" type="Button" parent="Node"]
+offset_left = -102.0
+offset_top = -24.0
+offset_right = -40.0
+offset_bottom = 7.0
+scale = Vector2(3.25831, 3.0845)
+text = "setting"
+script = ExtResource("4_xup1i")
+
+[node name="Button2" type="Button" parent="Node"]
+offset_left = -101.0
+offset_top = -213.0
+offset_right = -39.0
+offset_bottom = -182.0
+scale = Vector2(3.25831, 3.0845)
+text = "start"
+script = ExtResource("3_yuprj")
+
+[node name="Button3" type="Button" parent="Node"]
+offset_left = -104.0
+offset_top = 151.0
+offset_right = -42.0
+offset_bottom = 182.0
+scale = Vector2(3.25831, 3.0845)
+text = "exit"
+script = ExtResource("4_yuprj")
+
+[connection signal="button_down" from="Node/Button2" to="Control" method="_on_button_2_button_down"]
+[connection signal="button_down" from="Node/Button2" to="Node/Button2" method="_on_button_down"]
+[connection signal="button_down" from="Node/Button3" to="Node/Button3" method="_on_button_down"]

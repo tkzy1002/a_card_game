@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx0a8f4g8ntas"]
+
+[ext_resource type="Texture2D" uid="uid://xgx01b7yffr7" path="res://icon.svg" id="1_7p64d"]
+[ext_resource type="Script" uid="uid://ocmvedm8f0xs" path="res://scene/card.gd" id="1_gw1lc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1728.0
+offset_bottom = -824.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gw1lc")
+
+[node name="Panel" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 256.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 256.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ColorRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 42.0
+offset_right = 156.0
+offset_bottom = 170.0
+texture = ExtResource("1_7p64d")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Panel/ColorRect"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 182.0
+offset_right = 116.0
+offset_bottom = 205.0
+theme_override_colors/font_color = Color(1, 0.30588236, 1, 1)
+text = "card1"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 256.0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 0)
+theme_override_colors/font_pressed_color = Color(0.72464263, 0.72464263, 0.7246423, 1)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c28sux1jiryjs"]
+
+[ext_resource type="Texture2D" uid="uid://cmm4k77v0rrst" path="res://picture/leval1.png" id="1_ojdyr"]
+
+[node name="SceneLeval1" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_ojdyr")
