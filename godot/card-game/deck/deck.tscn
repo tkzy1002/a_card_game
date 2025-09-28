@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://br8efcumse2i7"]
+
+[ext_resource type="Script" uid="uid://cmyufowdexnof" path="res://deck/deck.gd" id="1_iau1w"]
+
+[node name="deck" type="Panel" groups=["cardDropable"]]
+offset_left = 300.0
+offset_top = 800.0
+offset_right = 1900.0
+offset_bottom = 1070.0
+script = ExtResource("1_iau1w")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 270.0
+
+[node name="CardPoiDesk" type="HBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(200, 270)
+layout_mode = 2
+
+[node name="CardBackground" type="Control" parent="ScrollContainer/CardPoiDesk"]
+layout_mode = 2
+
+[node name="CardDesk" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 4.0
+offset_right = 4.0
+offset_bottom = 270.0

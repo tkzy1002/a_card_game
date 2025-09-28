@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhy56yui58lwn"]
+
+[ext_resource type="Script" uid="uid://bp4cpe3mn184s" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dx0a8f4g8ntas" path="res://scene/card.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://br8efcumse2i7" path="res://deck/deck.tscn" id="2_0xm2m"]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("scene_1", "scene_2", "scene_3")]
+script = ExtResource("1_h2yge")
+scene_1 = NodePath("deck3")
+scene_2 = NodePath("deck2")
+scene_3 = NodePath("deck")
+maxRandomItemNum = 4
+minRandomItemNum = 1
+siteItems = {
+"test1": 100,
+"test2": 100,
+"test3": 100,
+"test4": 20
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 192.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("1_ig7tw")]
+offset_right = 192.0
+offset_bottom = 256.0
+follow_target = NodePath("../Control")
+
+[node name="deck" parent="." instance=ExtResource("2_0xm2m")]
+
+[node name="deck2" parent="." instance=ExtResource("2_0xm2m")]
+offset_top = 530.0
+offset_bottom = 800.0
+
+[node name="deck3" parent="." instance=ExtResource("2_0xm2m")]
+offset_top = 260.0
+offset_bottom = 530.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 30.0
+offset_top = 410.0
+offset_right = 266.0
+offset_bottom = 950.0
+theme_override_font_sizes/font_size = 128
+text = "抽卡"
+
+[connection signal="button_down" from="Button" to="." method="get_some_card"]
