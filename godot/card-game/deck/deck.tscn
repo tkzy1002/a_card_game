@@ -18,11 +18,45 @@ offset_bottom = 270.0
 custom_minimum_size = Vector2(200, 270)
 layout_mode = 2
 
-[node name="CardBackground" type="Control" parent="ScrollContainer/CardPoiDesk"]
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_right = 400.0
+offset_bottom = 270.0
+
+[node name="CardPoiDesk" type="HBoxContainer" parent="ScrollContainer2"]
+custom_minimum_size = Vector2(200, 270)
+layout_mode = 2
+
+[node name="ScrollContainer3" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_right = 600.0
+offset_bottom = 270.0
+
+[node name="CardPoiDesk" type="HBoxContainer" parent="ScrollContainer3"]
+custom_minimum_size = Vector2(200, 270)
+layout_mode = 2
+
+[node name="ScrollContainer4" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_right = 800.0
+offset_bottom = 270.0
+
+[node name="CardPoiDesk" type="HBoxContainer" parent="ScrollContainer4"]
+custom_minimum_size = Vector2(200, 270)
+layout_mode = 2
+
+[node name="ScrollContainer5" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_right = 1000.0
+offset_bottom = 270.0
+
+[node name="CardPoiDesk" type="HBoxContainer" parent="ScrollContainer5"]
+custom_minimum_size = Vector2(200, 270)
 layout_mode = 2
 
 [node name="CardDesk" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 4.0
-offset_right = 4.0
-offset_bottom = 270.0
